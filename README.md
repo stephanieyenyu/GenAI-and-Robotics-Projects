@@ -1,16 +1,56 @@
-# Retrieval-Augmented Generation (RAG) System
+# 🚀 Generative AI & Machine Learning Portfolio
 
-## 📌 Overview
-本專案為台大「生成式人工智慧與機器學習導論」課程作業。實作了一個基礎的 RAG 系統，旨在透過檢索《紅樓夢》知識庫來增強 LLM (Llama-3) 的回答準確度，有效解決大型語言模型的「幻覺問題」。
+### 👋 About Me
+**Name:** Lin, Yen Yu
+**Education:** National Tsing Hua University (NTHU)
+**Languages:** English (TOEIC 945 / TOEFL 93), Mandarin (Native)
+**Focus:** Generative AI, LLM Application, Digital Twin, and XR Development.
 
-## 🛠 Tech Stack
-- **Language:** Python (Jupyter Notebook)
-- **Model:** Llama-3-8B-Instruct (via Hugging Face)
-- **Frameworks:** PyTorch, Sentence-Transformers
-- **Techniques:** Document Chunking, Vector Embeddings, Cosine Similarity Retrieval
+---
 
-## 🚀 Key Features
-- **Data Preprocessing:** 實作文本分塊 (Chunking) 技術，將長篇小說轉化為可檢索的向量索引。
-- **Retrieval Mechanism:** 使用嵌入模型 (Embedding Model) 將問題與文本對齊，精準抓取相關段落。
-- **Prompt Engineering:** 透過精心設計的指令，引導模型僅依據檢索到的資訊進行總結回答。
-- [hw2_code.ipynb.ipynb](https://github.com/user-attachments/files/24608165/hw2_code.ipynb.ipynb)
+## 📌 Repository Overview
+This repository serves as a comprehensive portfolio of my projects developed during the **"Introduction to GenAI and Machine Learning"** course at NTU and my independent research at NTHU Product Realization Lab.
+
+The projects demonstrate practical experience in **Large Language Models (LLMs)**, **Retrieval-Augmented Generation (RAG)**, **Computer Vision**, and **Robotics Integration**.
+
+---
+
+## 📂 Featured Projects
+
+| Project | Domain | Key Tech Stack | Description |
+| :--- | :--- | :--- | :--- |
+| **[LLM Fine-Tuning (SFT + RLHF)](./HW7-LLM-SFT-RL)** | 🧠 GenAI | `Llama-3`, `TRL`, `PPO/DPO` | Implemented the full training pipeline: Supervised Fine-Tuning and Reinforcement Learning from Human Feedback. |
+| **[RAG System for Knowledge Retrieval](./HW2-RAG-System)** | 🔍 NLP | `LangChain`, `Vector DB`, `RAG` | Built a retrieval system to mitigate LLM hallucinations using specific knowledge bases. |
+| **[Malicious Instruction Defense](./HW4-LLM-Defense)** | 🛡️ AI Safety | `Prompt Engineering`, `Safety Guardrails` | Designed defense mechanisms against prompt injection attacks to ensure model safety. |
+| **[Digital Twin & Robotics Control](./Robotics-XR-Projects/Digital-Twin-UR3e)** | 🤖 IoT / XR | `Unity`, `C#`, `TCP/IP`, `UR3e` | (Optional) Real-time synchronization between Unity and physical UR3e robotic arm. |
+| **[Diffusion Model & Audio Generation](./HW9-Diffusion-Model)** | 🎨 Multimodal | `Stable Diffusion`, `Audio Codec` | Explored latent space manipulation for image generation and speech synthesis. |
+| **[CNN Image Classification](./HW6-CNN-Classification)** | 👁️ CV | `PyTorch`, `CNN`, `ResNet` | Trained a CNN model for anime character classification with data augmentation. |
+
+> *Click on the project names to view detailed code and documentation.*
+
+---
+
+## 🛠️ Technical Skills
+
+### Artificial Intelligence
+* **LLM Development:** RAG, Fine-tuning (LoRA/QLoRA), Prompt Engineering.
+* **Deep Learning:** PyTorch, TensorFlow, Hugging Face Ecosystem.
+* **Algorithms:** CNN, RNN, Transformer Architecture, Diffusion Models.
+
+### Engineering & Development
+* **Languages:** Python (Advanced), C# (Intermediate).
+* **XR & Simulation:** Unity 3D, MRTK, Vuforia.
+* **Tools:** Git/GitHub, Docker, Linux, Google Colab (Pro).
+
+---
+
+## 🏆 Certifications & Honors
+* **TOEIC:** 945/990 (Gold Certificate)
+* **TOEFL iBT:** 93/120
+
+---
+
+## 📫 Contact
+Feel free to reach out for collaboration or internship opportunities!
+* **Email:** stephanieyenyu@gmail.com
+* **LinkedIn:** [Your LinkedIn Profile Link]
