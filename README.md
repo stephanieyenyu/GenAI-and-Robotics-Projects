@@ -1,7 +1,7 @@
 # Generative AI & Machine Learning Portfolio
 
 ### About Me
-* **Name:** [Your Name]
+* **Name:** Lin, Yen Yu
 * **Education:** National Tsing Hua University (NTHU)
 * **Languages:** English (TOEIC 945 / TOEFL 93), Mandarin (Native)
 * **Focus:** Generative AI, LLM Application, Digital Twin, and XR Development.
