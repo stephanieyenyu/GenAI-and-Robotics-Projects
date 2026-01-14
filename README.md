@@ -51,4 +51,4 @@ The projects demonstrate practical experience in **Large Language Models (LLMs)*
 ## Contact
 Feel free to reach out for collaboration or internship opportunities!
 * **Email:** stephanieyenyu@gmail.com
-* **LinkedIn:** (https://www.linkedin.com/in/stephanie-lin-040663270/)
+* **LinkedIn:** [Stephanie Lin](https://www.linkedin.com/in/stephanie-lin-040663270/)
