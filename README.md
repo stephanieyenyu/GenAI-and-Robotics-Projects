@@ -34,12 +34,6 @@ The projects demonstrate practical experience in **Large Language Models (LLMs)*
 
 ---
 
-## Certifications & Honors
-* **TOEIC:** 945/990 (Gold Certificate)
-* **TOEFL iBT:** 93/120
-
----
-
 ## Contact
 Feel free to reach out for collaboration or internship opportunities!
 * **Email:** stephanieyenyu@gmail.com
