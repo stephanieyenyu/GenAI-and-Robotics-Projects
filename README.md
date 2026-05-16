@@ -1,13 +1,5 @@
 # Generative AI & Machine Learning Portfolio
 
-### About Me
-* **Name:** Lin, Yen Yu
-* **Education:** National Tsing Hua University (NTHU)
-* **Languages:** English (TOEIC 945 / TOEFL 93), Mandarin (Native)
-* **Focus:** Generative AI, LLM Application, and Deep Learning.
-
----
-
 ## Repository Overview
 This repository serves as a comprehensive portfolio of my projects developed during the **"Introduction to GenAI and Machine Learning"** course at NTU.
 
