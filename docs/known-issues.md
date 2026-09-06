@@ -24,7 +24,7 @@ Snapshot 2026-09-06 · 6 project folders · 6 notebooks · 6 project READMEs plu
 | C-6 | HW2 baselines all terminated without producing answers | Defect | Open |
 | C-7 | HW8 protected block was modified and its message is now false | Defect | Fix recommended |
 | C-8 | Student identifier committed in two notebooks | Security | Fix recommended |
-| D-1 | Root README names models that no notebook uses | Documentation | Fix recommended |
+| D-1 | Sub-READMEs name models that no notebook uses; root README corrected 2026-09-06 | Documentation | Open |
 | D-2 | HW2 README credits LangChain and a vector database; neither is used | Documentation | Fix recommended |
 | D-3 | HW4 README describes work the repository does not contain | Documentation | Fix recommended |
 | D-4 | Root README links a project folder that does not exist | Documentation | Fix recommended |
@@ -236,10 +236,12 @@ nothing.
 
 ---
 
-### D-1　Root README names models that no notebook uses
+### D-1　READMEs name models that no notebook uses
 
-**Symptom.** The root README credits Llama-3 to HW7 and to HW4. The sub-READMEs credit
-Llama-3-8B to HW7 and to HW8, and Llama-3-8B-Instruct to HW2.
+**Symptom.** The sub-READMEs credit Llama-3-8B to HW7 and to HW8, and Llama-3-8B-Instruct to
+HW2. The root README carried the same errors until it was rewritten on 2026-09-06; the six
+project READMEs have not yet been corrected, so the root README and its own subfolders currently
+disagree about which models ran.
 
 **Verified.** HW7 cell 22 loads `jaxon3062/gemma-3-4b-pt-chat`. HW2 cell 20 loads
 `unsloth/gemma-3-4b-it`. HW8 cell 14 loads `unsloth/Llama-3.2-1B-Instruct`. Two of the three are
