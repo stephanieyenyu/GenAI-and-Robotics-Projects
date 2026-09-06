@@ -1,0 +1,33 @@
+# Notebook and Python artefacts
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Credentials — never commit a real one
+.env
+*.token
+
+# Model and training artefacts
+*.pt
+*.safetensors
+*.bin
+sft/
+*_adapter/
+wandb/
+
+# Course data, fetched at runtime rather than committed
+*.csv
+*.jsonl
+*.txt
+!requirements.txt
+GENAI-ML-2025-HW5-Data/
+GenAI-2025-HW7-Dataset/
+
+# Submission files named by student identifier
+s[0-9]*.txt
+[A-Z][0-9]*.txt
+*.json
+!package.json
+
+# OS
+.DS_Store
