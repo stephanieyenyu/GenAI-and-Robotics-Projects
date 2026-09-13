@@ -99,10 +99,11 @@ Snapshot 2026-09-06. Derivations in [`docs/metrics.md`](docs/metrics.md).
 
 | Measurement | Value | Evidence |
 |---|---|---|
-| Notebooks in repository | 6, of which 5 parse | File inspection |
+| Notebooks in repository | 6, of which 5 parse; HW6 does not | File inspection |
 | Cells across parseable notebooks | 193 | Notebook output — JSON parse |
 | Code cells with recorded output | 44 of 90 | Notebook output — JSON parse |
 | Error outputs across all notebooks | 7 | Notebook output — JSON parse |
+| Output cells by assignment | HW7 19 · HW2 10 · HW5 7 · HW8 7 · HW4 1 | Notebook output — JSON parse |
 | HW5 training loss at early stop | 0.0279 | Notebook output, cell 20 |
 | HW5 validation loss at early stop | 0.553 | Notebook output, cell 20 |
 | HW5 early-stop epoch | 557 of 7,000 configured | Notebook output, cell 20 |
