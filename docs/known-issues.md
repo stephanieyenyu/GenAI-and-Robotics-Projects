@@ -6,7 +6,8 @@ checked and found not to be defects, B entries could not be verified from what t
 holds, C entries are defects, and D entries are documentation that does not match the code.
 Resolved entries are not deleted — the classification is the point, not the count.
 
-Snapshot 2026-09-06 · 6 project folders · 6 notebooks · 6 project READMEs plus 1 root README
+Snapshot 2026-09-06 · updated 2026-09-21 · 5 project folders · 5 notebooks · 5 project READMEs
+plus 1 root README
 
 ## Summary
 
@@ -16,21 +17,21 @@ Snapshot 2026-09-06 · 6 project folders · 6 notebooks · 6 project READMEs plu
 | A-2 | Datasets are fetched from an external course host | Design limitation | Accepted, not fixed |
 | B-1 | The institution attributed to the course is unverified | Unverified | Open |
 | B-2 | HW5 feature list may not match what was intended | Unverified | Open |
-| C-1 | Hugging Face access token committed in HW8 — revoked 2026-09-06 | Security | Fix recommended |
-| C-2 | HW6 notebook contains no content | Defect | Fix recommended |
+| C-1 | Hugging Face access token committed in HW8 — revoked 2026-09-06 | Security | **Fixed** — redacted |
+| C-2 | HW6 notebook contains no content | Defect | **Fixed** — folder removed |
 | C-3 | HW5 inference fails on a feature-count mismatch | Defect | Open |
 | C-4 | HW7 DPO stage was never executed | Defect | Open |
 | C-5 | HW8 evaluation cells produced no output | Defect | Open |
 | C-6 | HW2 baselines all terminated without producing answers | Defect | Open |
-| C-7 | HW8 protected block was modified and its message is now false | Defect | Fix recommended |
-| C-8 | Student identifier committed in two notebooks | Security | Fix recommended |
-| D-1 | Sub-READMEs name models that no notebook uses; root README corrected 2026-09-06 | Documentation | Open |
-| D-2 | HW2 README credits LangChain and a vector database; neither is used | Documentation | Fix recommended |
-| D-3 | HW4 README describes work the repository does not contain | Documentation | Fix recommended |
-| D-4 | Root README links a project folder that does not exist | Documentation | Fix recommended |
-| D-5 | HW5 README omits the embedding and PCA stage | Documentation | Fix recommended |
-| D-6 | Two project folders are absent from the root README table | Documentation | Fix recommended |
-| D-7 | Repository name promises robotics content the repository does not hold | Documentation | Open |
+| C-7 | HW8 protected block was modified and its message is now false | Defect | **Fixed** — reverted |
+| C-8 | Student identifier committed in two notebooks | Security | **Fixed** — placeholders |
+| D-1 | Sub-READMEs name models that no notebook uses; root README corrected 2026-09-06 | Documentation | **Fixed** — sub-READMEs corrected |
+| D-2 | HW2 README credits LangChain and a vector database; neither is used | Documentation | **Fixed** |
+| D-3 | HW4 README describes work the repository does not contain | Documentation | **Fixed** — noted |
+| D-4 | Root README links a project folder that does not exist | Documentation | **Fixed** |
+| D-5 | HW5 README omits the embedding and PCA stage | Documentation | **Fixed** |
+| D-6 | Two project folders are absent from the root README table | Documentation | **Fixed** |
+| D-7 | Repository name promises robotics content the repository does not hold | Documentation | **Fixed** — links added |
 
 ---
 
@@ -122,6 +123,10 @@ practice that reflects on the author whether or not the value is live.
 **Fix.** Replace the cell with a `getpass` prompt or a Colab secret before this notebook is
 recommitted. Rewriting history is not worth it for a dead credential.
 
+**Fixed 2026-09-21.** The literal token in cell 9 was replaced with a placeholder string. As
+anticipated, the string remains in the history of prior commits — the token was already dead
+before this fix, and a history rewrite was judged not worth it for that.
+
 ---
 
 ### C-2　HW6 notebook contains no content
@@ -140,6 +145,10 @@ to a described project and arrives at an empty file.
 Leaving a described project with no implementation is the worse of the two outcomes.
 
 **Check.** `wc -c HW6-CNN-Classification/hw6_code.ipynb`
+
+**Fixed 2026-09-21.** The source notebook could not be recovered. `HW6-CNN-Classification/` was
+deleted in full, along with its row in the root README's Featured Projects and Repository Layout
+sections and every count that included it. The repository now holds five assignments, not six.
 
 ---
 
@@ -221,6 +230,11 @@ not neutral with respect to the result.
 the block now does. The present state — a modified protected block whose output contradicts it —
 is the one configuration that should not persist.
 
+**Fixed 2026-09-21.** Restored `reverse=True` in cell 21, undoing the modification to the
+protected block rather than relabelling it — the block was headed with an instruction not to
+modify it, and the safer correction is to honour that instruction rather than document around it.
+The printed "longest kept" message is now accurate again.
+
 ---
 
 ### C-8　Student identifier committed in two notebooks
@@ -233,6 +247,9 @@ it is personal data in a public repository serving a graduate application, and r
 nothing.
 
 **Fix.** Replace with a placeholder or read it from an environment variable.
+
+**Fixed 2026-09-21.** Both cells now assign an empty string with a generic example in the comment
+(`e.g., s123456789`) rather than a real-format identifier.
 
 ---
 
@@ -252,6 +269,10 @@ it is checkable in one line by anyone who opens the notebook.
 
 **Check.** `grep -rn "from_pretrained\|base_model_name" --include=*.ipynb .`
 
+**Fixed 2026-09-21.** HW7, HW2 and HW8 sub-READMEs now name the models verified above
+(`jaxon3062/gemma-3-4b-pt-chat`, `unsloth/gemma-3-4b-it`, `unsloth/Llama-3.2-1B-Instruct`), matching
+the root README.
+
 ---
 
 ### D-2　HW2 README credits LangChain and a vector database; neither is used
@@ -267,6 +288,10 @@ combined by reciprocal rank fusion. Chunking is fixed-width at 850 characters wi
 **Assessment.** The implementation is a hybrid sparse-dense retriever with rank fusion, which is
 a stronger thing to have built than what the README claims. The documentation understates the
 work and misnames the tooling at the same time.
+
+**Fixed 2026-09-21.** The sub-README's Tech Stack and Key Features now describe the verified
+BM25 + jieba + dense-E5 + reciprocal-rank-fusion pipeline; the LangChain and cosine-similarity
+claims are removed.
 
 ---
 
@@ -287,6 +312,10 @@ this repository. As it stands the folder documents a submission the reader canno
 README that the artefact lives in the course judging system and describe the approach instead of
 claiming an evaluation.
 
+**Fixed 2026-09-21, second option.** The defence prompt was not recoverable. The sub-README now
+states plainly, up front, that the prompt was submitted to the course's external judging system
+and is not in this repository, matching how the root README already framed it.
+
 ---
 
 ### D-4　Root README links a project folder that does not exist
@@ -299,6 +328,10 @@ linking to `HW9-Diffusion-Model`.
 this absent folder.
 
 **Check.** `git ls-tree -d --name-only HEAD`
+
+**Fixed, already resolved as of the 2026-09-06 README rewrite.** The `HW9-Diffusion-Model` link
+does not appear in the current Featured Projects table. This entry's disposition was simply not
+updated when the fix landed — corrected 2026-09-21 on re-audit.
 
 ---
 
@@ -316,6 +349,9 @@ layers, which the README also does not mention.
 The task is also unnamed: the target is the Metacritic score of Steam titles, not an unspecified
 continuous variable.
 
+**Fixed 2026-09-21.** The sub-README's Tech Stack and Key Features now name the sentence-transformer
+embedding and PCA reduction step.
+
 ---
 
 ### D-6　Two project folders are absent from the root README table
@@ -325,6 +361,10 @@ in neither the table nor anywhere else in the root README.
 
 **Consequence.** HW8 is the only project here framed as an investigation rather than an
 implementation, and it is the one a reader is never pointed at.
+
+**Fixed, already resolved as of the 2026-09-06 README rewrite.** The Featured Projects table
+lists HW5 and HW8 alongside every other project folder. This entry's disposition was simply not
+updated when the fix landed — corrected 2026-09-21 on re-audit.
 
 ---
 
@@ -339,3 +379,7 @@ generative AI and machine learning coursework. No robotics code is present.
 **Fix direction.** Either rename the repository, which breaks any link already circulated, or
 keep the name and link the two robotics repositories from the root README. The second is
 reversible and the first is not.
+
+**Fixed 2026-09-21, second option.** The root README's Scope section now links
+`stephanieyenyu/LLM_RobotArm` and `stephanieyenyu/AMR_System` and states plainly that no robotics
+content lives in this repository. The name was kept.

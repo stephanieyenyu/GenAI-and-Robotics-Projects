@@ -3,6 +3,8 @@
 ## Overview
 This project focuses on LLM Safety, specifically designing defense mechanisms against Prompt Injection attacks. The goal is to prevent the model from generating harmful, unethical, or illegal content when prompted by malicious users.
 
+**The defense prompt itself was submitted to the course's external judging system and is not in this repository.** `hw4_code.ipynb` holds only the course-supplied token counter; see [`../docs/known-issues.md`](../docs/known-issues.md) D-3.
+
 ## Tech Stack
 * **Language:** Python 3
 * **Model:** Llama-3 / Gemma

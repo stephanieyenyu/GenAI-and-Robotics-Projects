@@ -1,6 +1,6 @@
-# GenAI Coursework — Six Assignments in Retrieval, Fine-Tuning, and Alignment
+# GenAI Coursework — Five Assignments in Retrieval, Fine-Tuning, and Alignment
 
-Six assignments from a generative AI and machine learning course, run on Google Colab between
+Five assignments from a generative AI and machine learning course, run on Google Colab between
 November and December 2025 and collected here as a coursework record. Each one adapts a
 pretrained model to a task under a fixed compute budget: a single Tesla T4 with 15 GiB, shared
 across model weights, retrieval indices, and generation.
@@ -13,7 +13,7 @@ length is a different curriculum from the full set, and the compute budget does 
 full set. **Choosing what to record**, which is where this repository is weakest, and the reason
 the sections below are written the way they are.
 
-What is here is five parseable notebooks, six project READMEs, and the configurations that were
+What is here is five parseable notebooks, five project READMEs, and the configurations that were
 actually executed. **No assignment here has a recorded end-to-end result.**
 
 ---
@@ -54,16 +54,21 @@ course.
 | `HW2-RAG-System` | Hybrid retrieval over a classical Chinese novel — fixed-width chunking at 850 characters with a 500-character stride, BM25 over jieba tokens, dense retrieval with a multilingual E5 encoder, reciprocal rank fusion, four generation baselines against a 4-bit Gemma-3-4B |
 | `HW4-LLM-Defense` | Defence prompting against prompt injection. The repository holds only the course-supplied token counter; the defence prompt itself was submitted to an external judging system and is not here |
 | `HW5-Regression` | Metacritic score regression over Steam titles — feature selection, two derived ratio features, sentence-transformer embeddings of two text columns reduced by PCA, an MLP with a projection shortcut |
-| `HW6-CNN-Classification` | Anime character classification described in its README. The notebook is empty; see C-2 |
 | `HW7-LLM-SFT-RL` | Supervised fine-tuning of a Gemma-3-4B chat model with LoRA, followed by a direct preference optimisation stage that was never executed |
 | `HW8-Catastrophic-Forgetting` | LoRA fine-tuning of Llama-3.2-1B-Instruct on a length-filtered GSM8K subset, with evaluation harnesses for both GSM8K accuracy and AILuminate safety |
 
+A sixth folder, `HW6-CNN-Classification`, was removed 2026-09-21 — its notebook was two bytes and
+unparseable, and the source was unrecoverable; see [`docs/known-issues.md`](docs/known-issues.md)
+C-2. My robotics coursework lives in two separate repositories,
+[`LLM_RobotArm`](https://github.com/stephanieyenyu/LLM_RobotArm) and
+[`AMR_System`](https://github.com/stephanieyenyu/AMR_System) — nothing in this one touches
+robotics; see [`docs/known-issues.md`](docs/known-issues.md) D-7.
+
 5 parseable notebooks · 193 cells · 90 code cells · 44 cells with recorded output ·
-7 error outputs · 6 project READMEs · 1 empty notebook.
+7 error outputs · 5 project READMEs.
 
 Cell counts come from parsing each `.ipynb` as JSON and counting `cells` by `cell_type`; a cell
-counts as having recorded output when its `outputs` array is non-empty. `hw6_code.ipynb` is
-excluded from every count because it is two bytes and does not parse. Every derivation is in
+counts as having recorded output when its `outputs` array is non-empty. Every derivation is in
 [`docs/metrics.md`](docs/metrics.md).
 
 Assignment work ran 2025-11-10 to 2025-12-08, dated from the `nvidia-smi` timestamps preserved in
@@ -99,7 +104,7 @@ Snapshot 2026-09-06. Derivations in [`docs/metrics.md`](docs/metrics.md).
 
 | Measurement | Value | Evidence |
 |---|---|---|
-| Notebooks in repository | 6, of which 5 parse; HW6 does not | File inspection |
+| Notebooks in repository | 5, all of which parse | File inspection |
 | Cells across parseable notebooks | 193 | Notebook output — JSON parse |
 | Code cells with recorded output | 44 of 90 | Notebook output — JSON parse |
 | Error outputs across all notebooks | 7 | Notebook output — JSON parse |
@@ -155,7 +160,7 @@ to 4 bits because they must be. Adaptation is low-rank because full fine-tuning 
 Retrieval is fused rather than dense-only because a fused ranking extracts more from a fixed number
 of passages, and the number of passages is what memory limits.
 
-The problem these six assignments address is therefore adaptation under a fixed and small memory
+The problem these five assignments address is therefore adaptation under a fixed and small memory
 budget: how much task-specific behaviour can be obtained from a pretrained model when the model,
 its index, and its training state must all fit in 15 GiB at once.
 
@@ -163,7 +168,7 @@ its index, and its training state must all fit in 15 GiB at once.
 
 ## Shared Pipeline and Data Flow
 
-This repository has no services, no deployment target, and no runtime. It is six Colab notebooks
+This repository has no services, no deployment target, and no runtime. It is five Colab notebooks
 that share a pattern rather than a codebase; nothing here imports anything else here, and each
 notebook runs standalone.
 
@@ -265,7 +270,6 @@ notebook executed and where it stopped.
 | HW2 | Index build, model load, all four baselines started | Three baselines interrupted manually; boss baseline out of memory | No answers, no submission file |
 | HW4 | Token counter only | Nothing to stop | Token count widget, no defence prompt |
 | HW5 | Training to early stop at epoch 557 | Inference — `ValueError` on feature count | Train 0.0279, validation 0.553 |
-| HW6 | Nothing | File is two bytes | None |
 | HW7 | Supervised fine-tuning | Preference optimisation stage never started | Training cell output only |
 | HW8 | LoRA fine-tuning | Both evaluation cells never executed | Training cell output only |
 
@@ -374,9 +378,6 @@ and whether the loss can be attributed to the objective or to the data.
 ├── HW5-Regression/
 │   ├── README.md                   Metacritic score regression over Steam metadata
 │   └── hw5_code.ipynb              23 cells — mpnet embeddings, PCA to 100, MLP with shortcut
-├── HW6-CNN-Classification/
-│   ├── README.md                   Describes a CNN with no notebook behind it — see C-2
-│   └── hw6_code.ipynb              2 bytes, does not parse
 ├── HW7-LLM-SFT-RL/
 │   ├── README.md                   SFT on Gemma-3-4B; DPO stage present but unrun
 │   └── hw7_code.ipynb              93 cells — LoRA r8 alpha32 on q/k/v, DPO trainer subclass

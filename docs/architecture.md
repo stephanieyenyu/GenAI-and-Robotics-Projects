@@ -1,11 +1,12 @@
 # Architecture
 
 This repository has no architecture in the usual sense. There are no services, no deployment
-target, no runtime, and no shared codebase. What follows describes the pipeline the six notebooks
+target, no runtime, and no shared codebase. What follows describes the pipeline the five notebooks
 have in common and the data flow inside each one, because that is the only structural claim this
 repository can support.
 
-Snapshot 2026-09-06.
+Snapshot 2026-09-06 · updated 2026-09-21 (HW6 removed, see
+[`known-issues.md`](known-issues.md) C-2).
 
 ---
 
@@ -28,7 +29,7 @@ notebook.
 ## The Shared Four-Stage Pipeline
 
 Every assignment here follows the same shape, and the shape is worth naming because it is what
-makes the six comparable.
+makes the five comparable.
 
 | Stage | Mechanism | Persists after the session? |
 |---|---|---|

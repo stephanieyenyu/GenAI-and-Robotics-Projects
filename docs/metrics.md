@@ -6,7 +6,9 @@ repository. The purpose of this document is to let a reader verify each number r
 it, which matters more here than in most projects, because most of the numbers a reader would
 expect to find are absent and the reason for each absence is checkable.
 
-**Snapshot date** 2026-09-06
+**Snapshot date** 2026-09-06 · updated 2026-09-21 (HW6 removed, see
+[`known-issues.md`](known-issues.md) C-2; scale figures below reflect the five remaining
+notebooks)
 
 **Observation window** 2025-11-10 to 2025-12-08, dated from `nvidia-smi` timestamps preserved in
 notebook outputs
@@ -53,14 +55,14 @@ PY
 
 | Figure | Value | Derivation |
 |---|---|---|
-| Notebooks in repository | 6 | `ls HW*/hw*_code.ipynb \| wc -l` |
-| Notebooks that parse as JSON | 5 | The script above; `hw6_code.ipynb` raises on load |
-| Total cells | 193 | Sum of `len(nb['cells'])` across the five parseable notebooks |
+| Notebooks in repository | 5 | `ls HW*/hw*_code.ipynb \| wc -l` |
+| Notebooks that parse as JSON | 5 | The script above; all of them |
+| Total cells | 193 | Sum of `len(nb['cells'])` across the five notebooks |
 | Code cells | 90 | Cells with `cell_type == 'code'` |
 | Markdown cells | 103 | 193 minus 90 |
 | Code cells with recorded output | 44 | Code cells whose `outputs` array is non-empty |
 | Error outputs | 7 | Output entries with `output_type == 'error'` |
-| Project READMEs | 6 | One per folder, including `HW6-CNN-Classification` |
+| Project READMEs | 5 | One per folder |
 
 **What these figures do not claim.** The cell counts include scaffold cells supplied by the course
 alongside cells written by the author. No separation between the two was attempted, and none is
@@ -76,7 +78,6 @@ count is a size measurement of the artefact, not of the work.
 | `hw2_code.ipynb` | 1,242,503 | 36 | 15 | 10 | 4 |
 | `hw4_code.ipynb` | 74,917 | 2 | 1 | 1 | 0 |
 | `hw5_code.ipynb` | 84,483 | 23 | 11 | 7 | 1 |
-| `hw6_code.ipynb` | 2 | — | — | — | — |
 | `hw7_code.ipynb` | 977,271 | 93 | 45 | 19 | 2 |
 | `hw8_code.ipynb` | 187,709 | 39 | 18 | 7 | 0 |
 

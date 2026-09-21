@@ -1,17 +1,17 @@
 # Retrieval-Augmented Generation (RAG) System
 
 ## Overview
-This project implements a Retrieval-Augmented Generation (RAG) pipeline using Llama-3 to answer questions based on the classic novel "Dream of the Red Chamber" (Honglou Meng). It addresses the issue of LLM hallucinations by retrieving accurate context before generation.
+This project implements a Retrieval-Augmented Generation (RAG) pipeline using Gemma-3-4B to answer questions based on the classic novel "Dream of the Red Chamber" (Honglou Meng). It addresses the issue of LLM hallucinations by retrieving accurate context before generation.
 
 ## Tech Stack
 * **Language:** Python 3
-* **Model:** Llama-3-8B-Instruct (via Hugging Face)
-* **Frameworks:** PyTorch, Sentence-Transformers, LangChain (Concepts)
-* **Techniques:** Document Chunking, Vector Embeddings, Cosine Similarity Retrieval
+* **Model:** Gemma-3-4B, 4-bit (`unsloth/gemma-3-4b-it`, via Hugging Face)
+* **Frameworks:** PyTorch, Sentence-Transformers, rank_bm25, jieba
+* **Techniques:** Fixed-width chunking, BM25 sparse retrieval over jieba tokens, dense retrieval with a multilingual E5 encoder, reciprocal rank fusion
 
 ## Key Features
-* **Data Preprocessing:** Implemented text chunking strategies to convert long literary texts into retrievable vector indices.
-* **Retrieval Mechanism:** Utilized embedding models to align user queries with relevant text segments.
+* **Data Preprocessing:** Implemented fixed-width text chunking to convert long literary texts into retrievable indices.
+* **Retrieval Mechanism:** Combines BM25 sparse retrieval with dense embedding retrieval, fused by reciprocal rank fusion, so neither retriever's failure mode dominates alone.
 * **Prompt Engineering:** Designed system prompts to enforce evidence-based generation.
 
 ## How to Run
