@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 392" width="900" height="392" role="img" aria-labelledby="t d">
+  <title id="t">Four-stage pattern shared by the five notebooks</title>
+  <desc id="d">Each notebook acquires data from a course-controlled host, prepares it into chunks, embeddings or chat turns, adapts a quantised base model by prompting or LoRA tuning, and emits a prediction file named by student identifier. The stages run inside one Colab session whose filesystem is destroyed when the session ends, so nothing passes between notebooks and no emit cell in this repository has recorded output.</desc>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#6b7280"/>
+    </marker>
+    <style>
+      .box { fill: #f3f4f6; stroke: #6b7280; stroke-width: 1.5; }
+      .key { fill: #e0ecff; stroke: #3b6fd4; stroke-width: 1.5; }
+      .void { fill: #ffffff; stroke: #9ca3af; stroke-width: 1.5; stroke-dasharray: 6 5; }
+      .t { font: 14px "Segoe UI", Helvetica, Arial, sans-serif; fill: #111827; text-anchor: middle; }
+      .s { font: 12px "Segoe UI", Helvetica, Arial, sans-serif; fill: #374151; text-anchor: middle; }
+      .v { font: 11.5px "Segoe UI", Helvetica, Arial, sans-serif; fill: #374151; text-anchor: start; }
+      .l { font: 12px "Segoe UI", Helvetica, Arial, sans-serif; fill: #6b7280; text-anchor: middle; }
+      .ln { stroke: #6b7280; stroke-width: 1.6; fill: none; }
+      .env { fill: none; stroke: #9ca3af; stroke-width: 1.4; stroke-dasharray: 4 4; }
+    </style>
+  </defs>
+
+  <!-- session envelope -->
+  <rect class="env" x="14" y="44" width="872" height="268" rx="10"/>
+  <text class="l" x="30" y="64" style="text-anchor:start">One Colab session</text>
+
+  <!-- stage boxes -->
+  <rect class="box" x="30" y="84" width="180" height="64" rx="6"/>
+  <text class="t" x="120" y="112">Acquire</text>
+  <text class="s" x="120" y="132">wget · git clone</text>
+
+  <rect class="box" x="250" y="84" width="180" height="64" rx="6"/>
+  <text class="t" x="340" y="112">Prepare</text>
+  <text class="s" x="340" y="132">chunk · embed · template</text>
+
+  <rect class="key" x="470" y="84" width="180" height="64" rx="6"/>
+  <text class="t" x="560" y="112">Adapt</text>
+  <text class="s" x="560" y="132">prompt or LoRA</text>
+
+  <rect class="void" x="690" y="84" width="180" height="64" rx="6"/>
+  <text class="t" x="780" y="112">Emit</text>
+  <text class="s" x="780" y="132">prediction file</text>
+
+  <path class="ln" d="M210 116 H246" marker-end="url(#a)"/>
+  <path class="ln" d="M430 116 H466" marker-end="url(#a)"/>
+  <path class="ln" d="M650 116 H686" marker-end="url(#a)"/>
+
+  <!-- per-assignment variation -->
+  <text class="v" x="34" y="182">HW2 · HW8 NTU host</text>
+  <text class="v" x="34" y="202">HW5 · HW7 GitHub</text>
+
+  <text class="v" x="254" y="182">HW2 850-char chunks</text>
+  <text class="v" x="254" y="202">HW5 embed + reduce</text>
+  <text class="v" x="254" y="222">HW7 · HW8 chat template</text>
+
+  <text class="v" x="474" y="182">HW2 · HW4 prompt only</text>
+  <text class="v" x="474" y="202">HW5 trained from scratch</text>
+  <text class="v" x="474" y="222">HW7 · HW8 LoRA</text>
+
+  <text class="v" x="694" y="182">named by student id</text>
+  <text class="v" x="694" y="202">judged externally</text>
+  <text class="v" x="694" y="222" style="fill:#9ca3af">no cell output recorded</text>
+
+  <!-- session note -->
+  <text class="l" x="450" y="282">Session filesystem is the only persistence between stages, and it is destroyed when the session ends.</text>
+
+  <!-- one-way note -->
+  <text class="s" x="450" y="350">Nothing written by one notebook is read by another. No intermediate artefact is committed,</text>
+  <text class="s" x="450" y="370">so a rerun is the only way to recover a missing number — there is no cache to read it out of.</text>
+</svg>

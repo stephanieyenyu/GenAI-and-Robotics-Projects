@@ -18,7 +18,7 @@ actually executed. **No assignment here has a recorded end-to-end result.**
 
 ---
 
-## What It Does
+## What it does
 
 **Builds a hybrid retriever rather than choosing between sparse and dense.** HW2 indexes the full
 text of *Dream of the Red Chamber* twice — BM25 over jieba tokens, and dense vectors from
@@ -166,7 +166,9 @@ its index, and its training state must all fit in 15 GiB at once.
 
 ---
 
-## Shared Pipeline and Data Flow
+## System Architecture
+
+![Four-stage pattern shared by the five notebooks](docs/images/architecture.svg)
 
 This repository has no services, no deployment target, and no runtime. It is five Colab notebooks
 that share a pattern rather than a codebase; nothing here imports anything else here, and each
@@ -385,6 +387,8 @@ and whether the loss can be attributed to the objective or to the data.
 │   ├── README.md                   GSM8K fine-tuning against AILuminate safety evaluation
 │   └── hw8_code.ipynb              39 cells — Llama-3.2-1B, 4-bit NF4, LoRA r8 alpha16
 ├── docs/
+│   ├── images/
+│   │   └── architecture.svg        The four-stage pattern, as drawn in this README
 │   ├── architecture.md             Stage-by-stage data flow shared across the notebooks
 │   ├── metrics.md                  Derivation of every figure quoted in this README
 │   └── known-issues.md             19 entries, classified and dispositioned
